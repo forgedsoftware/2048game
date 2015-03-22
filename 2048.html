@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="2048.css" />
+		<script src="2048.js"></script>
+		<script src="2048visual.js"></script>
+		<script>
+			var game;
+
+			document.addEventListener("DOMContentLoaded", function (event) {
+				game = new Game2048Visual(document.getElementById("gameDiv"),
+					document.getElementById("score"), 500);
+				game.start();
+				//game.game.solvers.leftCorner(true, game.game, game.wait100);
+			});
+
+			function restart() {
+				game.restart();
+			}
+
+		</script>
+	</head>
+	<body>
+		<div id="controls">
+			<div class="button" onclick="restart()">Restart</div>
+			<div class="button" onclick="undo()">Undo</div>
+			<div id="score_box"><h3 id="score_title">SCORE</h3><div id="score">0</div></div>
+		</div>
+		<div id="gameDiv"></div>
+	</body>
+</html>
